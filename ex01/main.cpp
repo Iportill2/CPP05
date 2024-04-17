@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 int main()
 {
-	Bureaucraft a("pepe",150);
+	Form a(false,130,129);
 
-	std::cout << a << std::endl;
+	//std::cout << a << std::endl;
 	
 }

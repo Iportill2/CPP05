@@ -1,13 +1,13 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Undefined_name") , _grade(150)
+Bureaucrat::Bureaucrat() : _name("Undefined_name") , _grade(149)
 {
-	std::cout << "Default Constructor named " << getName() << " with range " << getGrade() << " created!"<< std::endl;
+	std::cout << "Default Constructor Burocrata named " << getName() << " with range " << getGrade() << " created!"<< std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name) , _grade(grade)
 {
-	std::cout << "Constructor named " << getName() << " with range " << getGrade() << " created!"<< std::endl;
+	std::cout << "Constructor Burocrata named " << getName() << " with range " << getGrade() << " created!"<< std::endl;
 	
 	if(getGrade() < 1 )
 		throw GradeTooHighException();
@@ -29,7 +29,7 @@ Bureaucrat & Bureaucrat::operator =(Bureaucrat const & inst)
 }
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor named " << getName() << "with range "<< getGrade() << " destroyed!"<< std::endl;
+	std::cout << "Destructor Burocrata named " << getName() << " with range "<< getGrade() << " destroyed!"<< std::endl;
 }
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & inst)
 {

@@ -6,7 +6,7 @@ class exception;
 
 class Bureaucrat
 {
-	private:
+	protected:
 		std::string _name;
 		int _grade;
 	public:
