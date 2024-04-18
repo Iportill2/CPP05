@@ -3,17 +3,19 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 
-class Form : public Bureaucrat
+class Bureaucrat;
+
+class Form 
 {
 	private:
-	bool	_signed;
+	std::string _name;
 	int		_grade_to_sign;
 	int 	_grade_to_execute;
-	std::string _name;
+	bool	_signed;
 	public:
 	//CANONICAL
 	Form();
-	Form(bool Signed,int grade_to_sign,int grade_to_execute);	
+	Form(std::string name,int grade_to_sign,int grade_to_execute);	
 	Form(const Form & copy);
 	Form & operator=(Form const & inst);
 	~Form();
@@ -25,10 +27,9 @@ class Form : public Bureaucrat
 	int		getGradetosign()const ;
 	int		getGradetoexecute()const ;
 
-	void 	signForm(Bureaucrat &inst);
-	void	beSigned();
 
-	void	beSigned(Bureaucrat);
+
+	void	beSigned(Bureaucrat &inst);
 	class GradeTooHighException : public std::exception
 	{
 		public:

@@ -1,9 +1,10 @@
 #ifndef BUREAUCRAFT_HPP
 # define BUREAUCRAFT_HPP
 # include <iostream>
+# include "Form.hpp"
 
-class exception;
-
+//class exception;
+class Form;
 class Bureaucrat
 {
 	protected:
@@ -17,6 +18,8 @@ class Bureaucrat
 		Bureaucrat & operator =(Bureaucrat const & inst);
 		~Bureaucrat();
 		//friend std::ostream & operator<<(std::ostream & o, Bureaucraft const & inst2);
+		
+		bool	signForm(Form &inst);
 
 
 		const std::string getName() const;
