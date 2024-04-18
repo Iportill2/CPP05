@@ -3,6 +3,10 @@
 Bureaucrat::Bureaucrat() : _name("Undefined_name") , _grade(149)
 {
 	std::cout << "Default Constructor Burocrata named " << getName() << " with range " << getGrade() << " created!"<< std::endl;
+	if(getGrade() < 1 )
+		throw GradeTooHighException();
+	else if(getGrade() > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name) , _grade(grade)

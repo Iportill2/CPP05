@@ -2,8 +2,10 @@
 #include "Form.hpp"
 int main()
 {
-	Form a(false,130,129);
+	Form a(false,138,128);
+	Form b = a;
 
-	//std::cout << a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 	
 }
