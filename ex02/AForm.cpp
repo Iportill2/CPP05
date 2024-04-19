@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 /*
 \033[0m - Restablecer / color por defecto
@@ -13,7 +13,7 @@
 */
 
 //CANONICAL
-Form::Form() : _name("Form Name"), _grade_to_sign(150), _grade_to_execute(150), _signed(false)
+AForm::AForm() : _name("Form Name"), _grade_to_sign(150), _grade_to_execute(150), _signed(false)
 {
 	if(getGradetosign() < 1  || getGradetoexecute() < 1)
 		throw GradeTooHighException();
@@ -22,7 +22,7 @@ Form::Form() : _name("Form Name"), _grade_to_sign(150), _grade_to_execute(150), 
 	std::cout << "\033[36m" << "Default Form constructor named " << this->getName()  << " created" << "\033[0m"<< std::endl;
 	std::cout << "getSigned= " << getSigned() << "getGradetosign= "<< getGradetosign() << "getGradetoexecute= "  << getGradetoexecute() << "\033[0m" << std::endl;
 }
-Form::Form(std::string name,int grade_to_sign,int grade_to_execute) : _name(name),_grade_to_sign(grade_to_sign),_grade_to_execute(grade_to_execute) ,_signed(false)
+AForm::AForm(std::string name,int grade_to_sign,int grade_to_execute) : _name(name),_grade_to_sign(grade_to_sign),_grade_to_execute(grade_to_execute) ,_signed(false)
 {
 	if(getGradetosign() < 1  || getGradetoexecute() < 1)
 		throw GradeTooHighException();
@@ -32,12 +32,12 @@ std::cout  << "\033[35m"<< "Constructor Form named " << this->getName() <<  " cr
 std::cout << "getSigned=" << getSigned() << " getGradetosign="<< getGradetosign() << " getGradetoexecute=" << getGradetoexecute() << std::endl;
 
 }
-Form::Form(const Form & copy)
+AForm::AForm(const AForm & copy)
 {
 	std::cout <<  "Form copy" << std::endl;
 	*this=copy;
 }
-Form & Form::operator=(Form const & inst)
+AForm & AForm::operator=(AForm const & inst)
 {
 	this->_name = inst._name;
 	this->_grade_to_sign = inst._grade_to_sign;
@@ -46,49 +46,49 @@ Form & Form::operator=(Form const & inst)
 	return (*this);
 	std::cout <<  "Form operator=" << std::endl;
 }
-Form::~Form()
+AForm::~AForm()
 {
 std::cout << "Destructor Form named " << this->getName() <<  " destroyed!"<< std::endl;
 }
 
 //SETTERS
-void Form::setName(std::string name)
+void AForm::setName(std::string name)
 {
 	_name = name;
 }
-void Form::setGradetosign(int grade_to_sign)
+void AForm::setGradetosign(int grade_to_sign)
 {
 	_grade_to_sign = grade_to_sign;
 
 }
-void Form::setGradetoexecute(int grade_to_execute)
+void AForm::setGradetoexecute(int grade_to_execute)
 {
 	_grade_to_execute = grade_to_execute;
 }
-void Form::setSigned(bool signe)
+void AForm::setSigned(bool signe)
 {
 	_signed = signe;
 }
 //GETTERS
-const	std::string Form::getName() const 
+const	std::string AForm::getName() const 
 {
 	return(this->_name);
 }
-bool Form::getSigned() const 
+bool AForm::getSigned() const 
 {
 	return(this->_signed);
 }
-int Form::getGradetosign() const
+int AForm::getGradetosign() const
 {
 	return(this->_grade_to_sign);
 }
-int Form::getGradetoexecute() const 
+int AForm::getGradetoexecute() const 
 {
 	return(this->_grade_to_execute);
 }
 
 
-void Form::beSigned(Bureaucrat &inst)
+void AForm::beSigned(Bureaucrat &inst)
 {
 	this->_signed = true;
 	std::cout << "gradetosign=" << getGradetosign() << " gradotoexecute= " << getGradetoexecute() << std::endl;
@@ -96,7 +96,7 @@ void Form::beSigned(Bureaucrat &inst)
 }
 
 
-std::ostream& operator <<(std::ostream &v, const Form &inst)
+std::ostream& operator <<(std::ostream &v, const AForm &inst)
 {   
 	v << "\033[32m" <<  "operator<< ";
 	v << "Form name: " << inst.getName();

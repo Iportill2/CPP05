@@ -1,5 +1,8 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 int main()
 {
 	try
@@ -33,15 +36,15 @@ int main()
 		std::cout << "************************" << std::endl;
 
 		//FORM
-		Form A;//default Bureaucrat constructor
+		/* AForm A;//default Bureaucrat constructor
 		std::cout << A << std::endl;
 		std::cout << "************************" << std::endl;
 
-		Form B("Documento1",45,45);//Bureaucrat constructor
+		AForm B("Documento1",45,45);//Bureaucrat constructor
 		std::cout << B << std::endl;
 		std::cout << "************************" << std::endl;
 	
-		Form C(B);//COPY  constructor Bureaucrat 
+		AForm C(B);//COPY  constructor Bureaucrat 
 		std::cout << C << std::endl;
 		std::cout << "************************" << std::endl;
 
@@ -61,7 +64,7 @@ int main()
 		a.signForm(A);
 		std::cout << A << std::endl;
 		std::cout << a << std::endl;
-		std::cout << "+++++++++++++++++++++++++" << std::endl;
+		std::cout << "+++++++++++++++++++++++++" << std::endl; */
 	}
 	catch(const std::exception& e)
 	{

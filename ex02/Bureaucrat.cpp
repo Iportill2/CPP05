@@ -85,7 +85,7 @@ void Bureaucrat::downGrade(int i)
 	this->_grade = this->_grade + i ;
 }
 
-bool	Bureaucrat::signForm(Form &inst)
+bool	Bureaucrat::signForm(AForm &inst)
 {
 	if(inst.getSigned() == true)
 	{
