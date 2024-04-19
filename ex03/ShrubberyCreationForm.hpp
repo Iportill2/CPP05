@@ -1,37 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 11:39:37 by imontero          #+#    #+#             */
-/*   Updated: 2023/12/26 11:39:37 by imontero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
-
-# include "AForm.hpp"
-
+#ifndef SHRUBBERY_CREATION_FORM_HPP
+# define SHRUBBERY_CREATION_FORM_HPP
+#include "AForm.hpp"
 class ShrubberyCreationForm : public AForm
 {
 	private:
-		std::string		_target;
-	
+	std::string 				_target;
 	public:
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const & src);
-		~ShrubberyCreationForm(void);
+	//CANONICAL
+								ShrubberyCreationForm();
+								ShrubberyCreationForm(std::string target);
+								ShrubberyCreationForm(ShrubberyCreationForm const & copy);
+	ShrubberyCreationForm & 	operator=(ShrubberyCreationForm const & inst);
+								~ShrubberyCreationForm();
 
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
+	//GETTER
+	std::string					getTarget();
 
-		std::string	getTarget(void) const;
-		void		execute(Bureaucrat const &executor) const;
+	void 						execute(Bureaucrat const & executor) const;
 
 };
-
 #endif
-

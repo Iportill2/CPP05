@@ -1,55 +1,33 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/26 11:40:39 by imontero          #+#    #+#             */
-/*   Updated: 2023/12/26 11:40:39 by imontero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+# include "ShrubberyCreationForm.hpp"
+# include "AForm.hpp"
 
-#include "ShrubberyCreationForm.hpp"
-#include <fstream>
-
-ShrubberyCreationForm::ShrubberyCreationForm(void): 
-	AForm("Shrubbery Creation Form", 145, 137),
-	_target("Undefined target")
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("Undefined target")
 {
+
+}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
+{
+	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): 
-	AForm("Shrubbery Creation Form", 145, 137),
-	_target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & inst) : AForm("ShrubberyCreationForm", 145, 137),_target(inst._target)
 {
+    this->_target = inst._target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src):
-	AForm("Presidential Pardon Form", 145, 137),
-	_target(src._target)
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & inst)
 {
-	*this = src;
-}
-
-ShrubberyCreationForm::~ShrubberyCreationForm(void)
-{
-}
-
-ShrubberyCreationForm & ShrubberyCreationForm::operator =(ShrubberyCreationForm const & rhs)
-{
-	this->_target = rhs._target;
-	return (*this);
-}
-
-std::string	ShrubberyCreationForm::getTarget(void) const
-{
-	return (this->_target);
+    if (this != &inst)
+    {
+        this->_target = inst._target;
+    }
+    return *this;
 }
 
 void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	(void)executor;
+	std::cout << this->_target;
 	std::ofstream outfile((this->_target + "_shrubbery").c_str());
 	outfile << "      /\\      " << std::endl;
 	outfile << "     /\\*\\     " << std::endl;
@@ -64,5 +42,4 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	outfile << std::endl;
 	std::cout << "Shrubbery has been created at ";
 	std::cout << this->_target << std::endl;
-
 }
