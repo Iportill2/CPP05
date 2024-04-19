@@ -1,48 +1,39 @@
 #include "Bureaucrat.hpp"
-
-int  main()
+int main()
 {
 	try
-	{
-		//Bureaucrat b;
-		Bureaucrat a("Pepe Funcionario", 2);
+	{	
+		//BUREAUCRAT
+		Bureaucrat a;//default Bureaucrat constructor
 		std::cout << a << std::endl;
+		std::cout << "************************" << std::endl;
+
+		Bureaucrat b("pepe",44);//Bureaucrat constructor
+		std::cout << b << std::endl;
+		std::cout << "************************" << std::endl;
+	
+		Bureaucrat c(b);//COPY  constructor Bureaucrat 
+		std::cout << c << std::endl;
+		std::cout << "************************" << std::endl;
+
+		a = c;
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << c << std::endl;
+		std::cout << "************************" << std::endl;
+
 		a.upGrade();
+		b.upGrade(2);
+		c.downGrade();
+		a.downGrade(3);
 		std::cout << a << std::endl;
-		//a.upGrade();
-		//std::cout << a << std::endl;
-
-		//std::cout << b << std::endl;
-		//b.downGrade();
-		//std::cout << b << std::endl;
+		std::cout << b << std::endl;
+		std::cout << c << std::endl;
+		std::cout << "************************" << std::endl;
 	}
-	catch(std::exception& z)
+	catch(const std::exception& e)
 	{
-		std::cerr << "Exception: " << z.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
-
-	std::cout << std::endl << "**************" << std::endl << std::endl;
-
-	try
-	{
-		Bureaucrat paco;
-		std::cout << paco << std::endl;
-		paco.upGrade(5);
-		std::cout << paco << std::endl;
-		paco.upGrade();
-		std::cout << paco << std::endl;
-		paco.downGrade();
-		std::cout << paco << std::endl;
-		paco.downGrade(10);
-		std::cout << paco << std::endl;
-	}
-	catch(std::exception& x)
-	{
-		std::cerr << "Exception: " << x.what() << std::endl;
-	}
-	
-	std::cout << std::endl << "*************" << std::endl << std::endl;
-	std::cout << "Program Finished!" << std::endl;
-	
-	return (0);
 }
+
