@@ -12,23 +12,21 @@ class Bureaucrat
 		int _grade;
 	public:
 	//CANONICAL//
-		Bureaucrat();
-		Bureaucrat(const std::string name, const int grade);
-		Bureaucrat(const Bureaucrat & copy);
-		Bureaucrat & operator =(Bureaucrat const & inst);
-		~Bureaucrat();
-		//friend std::ostream & operator<<(std::ostream & o, Bureaucraft const & inst2);
+							Bureaucrat();
+							Bureaucrat(const std::string name, const int grade);
+							Bureaucrat(const Bureaucrat & copy);
+		Bureaucrat & 		operator =(Bureaucrat const & inst);
+							~Bureaucrat();
 		
-		bool	signForm(Form &inst);
+		bool				signForm(Form &inst);
+		//GETTERS
+		const std::string 	getName() const;
+		int 				getGrade() const;
 
-
-		const std::string getName() const;
-		int getGrade() const;
-
-		void			upGrade(void);
-		void			upGrade(int i);
-		void			downGrade(void);
-		void			downGrade(int i);
+		void				upGrade(void);
+		void				upGrade(int i);
+		void				downGrade(void);
+		void				downGrade(int i);
 
 		class GradeTooHighException : public std::exception
 		{
