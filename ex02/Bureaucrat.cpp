@@ -99,6 +99,7 @@ bool	Bureaucrat::signForm(AForm &inst)
 		std::cout << "bureaucrat " << this->_name;
 		std::cout << " couldn’t sign form " << inst.getName(); 
 		std::cout << " because he or she has not enough grade." << std::endl;
+		std::cout << "NAME =" << inst.getName() << " GRADE=" << this->getGrade() << std::endl;
 		throw (GradeTooLowException());
 		return(false);
 	}	

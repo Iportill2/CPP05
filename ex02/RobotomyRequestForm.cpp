@@ -23,6 +23,10 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
     }
     return *this;
 }
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+	std::cout << "RobotomyRequestForm Destructor" << std::endl;
+}
 
 void		RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {

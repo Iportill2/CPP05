@@ -20,7 +20,7 @@ class AForm
 	AForm(const AForm & copy);
 	AForm & operator=(AForm const & inst);
 	~AForm();
-
+	//SETTERS
 	void setName(std::string name);
 	void setGradetosign(int grade_to_sign);
 	void setGradetoexecute(int grade_to_execute);

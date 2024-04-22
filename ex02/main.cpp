@@ -8,6 +8,7 @@ int main()
 	try
 	{	
 		//BUREAUCRAT
+		//operator <<
 		Bureaucrat a;//default Bureaucrat constructor
 		std::cout << a << std::endl;
 		std::cout << "************************" << std::endl;
@@ -20,13 +21,14 @@ int main()
 		std::cout << c << std::endl;
 		std::cout << "************************" << std::endl;
 
-		a = c;
+		a = c;//operator =
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 		std::cout << c << std::endl;
 		std::cout << "************************" << std::endl;
 
 		a.upGrade();
+		std::cout << a << std::endl;
 		b.upGrade(2);
 		c.downGrade();
 		a.downGrade(3);
@@ -34,6 +36,13 @@ int main()
 		std::cout << b << std::endl;
 		std::cout << c << std::endl;
 		std::cout << "************************" << std::endl;
+
+	/* 	PresidentialPardonForm A("presiPardFormJose");
+		A.execute(a);
+		RobotomyRequestForm B ("RobotFormIban");
+		B.execute(a); */
+		ShrubberyCreationForm C ("ShrumForm Cami");
+		C.execute(a);
 
 		//FORM
 		/* AForm A;//default Bureaucrat constructor
