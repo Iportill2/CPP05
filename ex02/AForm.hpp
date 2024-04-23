@@ -3,16 +3,23 @@
 # include <iostream>
 # include <fstream>
 # include "Bureaucrat.hpp"
+# define SC_SIGN 145	//ShrubberyCreationForm SIGN
+# define SC_EXEC 137	//ShrubberyCreationForm EXEC
 
+# define RR_SIGN 72		//RobotomyRequestForm SIGN
+# define RR_EXEC 45		//RobotomyRequestForm EXEC
+
+# define PP_SIGN 25		//PresidentialPardonForm SIGN
+# define PP_EXEC 5		//PresidentialPardonForm EXEC
 class Bureaucrat;
 
 class AForm 
 {
 	private:
 	std::string _name;
-	int		_grade_to_sign;
-	int 	_grade_to_execute;
-	bool	_signed;
+	int			_grade_to_sign;
+	int 		_grade_to_execute;
+	bool		_signed;
 	public:
 	//CANONICAL
 	AForm();
@@ -54,3 +61,4 @@ class AForm
 };
 std::ostream& operator <<(std::ostream &v, const AForm &inst) ;
 #endif
+

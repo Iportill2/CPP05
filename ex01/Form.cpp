@@ -19,8 +19,10 @@ Form::Form() : _name("Form Name"), _grade_to_sign(150), _grade_to_execute(150), 
 		throw GradeTooHighException();
 	else if(getGradetosign() > 150  || getGradetoexecute() > 150)
 		throw GradeTooLowException();
-	std::cout << "\033[36m" << "Default Form constructor named " << this->getName()  << " created" << "\033[0m"<< std::endl;
-	std::cout << "getSigned= " << getSigned() << "getGradetosign= "<< getGradetosign() << "getGradetoexecute= "  << getGradetoexecute() << "\033[0m" << std::endl;
+/*
+ 	std::cout << "\033[36m" << "Default Form constructor named " << this->getName()  << " created" << "\033[0m"<< std::endl;
+	std::cout << "getSigned= " << getSigned() << "getGradetosign= "<< getGradetosign() << "getGradetoexecute= "  << getGradetoexecute() << "\033[0m" << std::endl; 
+*/
 }
 Form::Form(std::string name,int grade_to_sign,int grade_to_execute) : _name(name),_grade_to_sign(grade_to_sign),_grade_to_execute(grade_to_execute) ,_signed(false)
 {
@@ -28,8 +30,10 @@ Form::Form(std::string name,int grade_to_sign,int grade_to_execute) : _name(name
 		throw GradeTooHighException();
 	else if(getGradetosign() > 150  || getGradetoexecute() > 150)
 		throw GradeTooLowException();
+/*
 std::cout  << "\033[35m"<< "Constructor Form named " << this->getName() <<  " created" << "\033[0m" << std::endl;
-std::cout << "getSigned=" << getSigned() << " getGradetosign="<< getGradetosign() << " getGradetoexecute=" << getGradetoexecute() << std::endl;
+std::cout << "getSigned=" << getSigned() << " getGradetosign="<< getGradetosign() << " getGradetoexecute=" << getGradetoexecute() << std::endl; 
+*/
 
 }
 Form::Form(const Form & copy)
@@ -98,7 +102,7 @@ void Form::beSigned(Bureaucrat &inst)
 
 std::ostream& operator <<(std::ostream &v, const Form &inst)
 {   
-	v << "\033[32m" <<  "operator<< ";
+	v << "\033[32m" <<  "operator<< " << std::endl ;
 	v << "Form name: " << inst.getName();
 	v << ", Status(Signed)TRUE=1/FALSE=0: " << inst.getSigned();
 	v << ", Sign grade: " << inst.getGradetosign();

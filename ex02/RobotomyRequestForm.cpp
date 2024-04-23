@@ -31,22 +31,30 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void		RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	(void)executor;
-	std::cout << this->_target;
 
-	std::cout << "Makes some drilling noises" << std::endl;
-	//generates a random number between 0 and 1
 
-	srand(time(NULL));
-	int i = rand() % 2;
-	if (i)
+
+	if( this->getSigned()== false)
 	{
-		std::cout << this->_target;
-		std::cout << " has been robotomized." << std::endl;
+		std::cout << executor.getName() <<  " cannot execute " << this->getName() << " because it is not signed." << std::endl;
 	}
+    else if( executor.getGrade() <= this->getGradetoexecute() && this->getSigned()== true)
+	{
+		std::cout << this->_target << " Makes some drilling noises" << std::endl;
+		//generates a random number between 0 and 1
+		srand(time(NULL));
+		int i = rand() % 2;
+		if (i)
+		{
+			std::cout << this->_target;
+			std::cout << " has been robotomized." << std::endl;
+		}
+		else
+		{
+			std::cout << this->_target;
+			std::cout << "´s robotomization failed." << std::endl;
+		}
+    }
 	else
-	{
-		std::cout << this->_target;
-		std::cout << " robotomization failed." << std::endl;
-	}
-
+		throw(GradeTooLowException());
 }

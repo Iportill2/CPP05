@@ -7,73 +7,44 @@ int main()
 {
 	try
 	{	
+		//AForm z;
+
 		//BUREAUCRAT
 		//operator <<
 		Bureaucrat a;//default Bureaucrat constructor
-		std::cout << a << std::endl;
-		std::cout << "************************" << std::endl;
-
-		Bureaucrat b("pepe",44);//Bureaucrat constructor
-		std::cout << b << std::endl;
-		std::cout << "************************" << std::endl;
-	
-		Bureaucrat c(b);//COPY  constructor Bureaucrat 
-		std::cout << c << std::endl;
-		std::cout << "************************" << std::endl;
-
+		Bureaucrat b("pepe",5);//Bureaucrat constructor
+		Bureaucrat c(b);//COPY  constructor Bureaucrat
+		std::cout << c ;
 		a = c;//operator =
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		std::cout << "************************" << std::endl;
+		//a.downGrade();//
+		PresidentialPardonForm A;
+		PresidentialPardonForm B("juancar");
+		PresidentialPardonForm C(B);
+		B = C;
+		std::cout << B ;
+		a.signForm(B);
+		std::cout << B ;
+		B.execute(a);
 
-		a.upGrade();
-		std::cout << a << std::endl;
-		b.upGrade(2);
-		c.downGrade();
-		a.downGrade(3);
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		std::cout << c << std::endl;
-		std::cout << "************************" << std::endl;
+		RobotomyRequestForm E;
+		RobotomyRequestForm F("Johnny5");
+		RobotomyRequestForm G(F);
+		F = G;
+		std::cout << F ;
+		a.signForm(F);
+		std::cout << F ;
+		F.execute(a);
 
-	/* 	PresidentialPardonForm A("presiPardFormJose");
-		A.execute(a);
-		RobotomyRequestForm B ("RobotFormIban");
-		B.execute(a); */
-		ShrubberyCreationForm C ("ShrumForm Cami");
-		C.execute(a);
+		ShrubberyCreationForm X;
+		ShrubberyCreationForm Y("Groot");
+		ShrubberyCreationForm Z(Y);
+		Y = Z;
+		std::cout << Y ;
+		a.signForm(Y);
+		std::cout << Y ;
+		Y.execute(a);
 
-		//FORM
-		/* AForm A;//default Bureaucrat constructor
-		std::cout << A << std::endl;
-		std::cout << "************************" << std::endl;
-
-		AForm B("Documento1",45,45);//Bureaucrat constructor
-		std::cout << B << std::endl;
-		std::cout << "************************" << std::endl;
-	
-		AForm C(B);//COPY  constructor Bureaucrat 
-		std::cout << C << std::endl;
-		std::cout << "************************" << std::endl;
-
-		A = C;//operator=
-		std::cout << A << std::endl;
-		std::cout << B << std::endl;
-		std::cout << C << std::endl;
-		std::cout << "************************" << std::endl;
-
-		std::cout << A << std::endl;
-		std::cout << a << std::endl;
-		a.upGrade();//
-		a.signForm(A);
-		std::cout << A << std::endl;
-		std::cout << a << std::endl;
-		a.upGrade();
-		a.signForm(A);
-		std::cout << A << std::endl;
-		std::cout << a << std::endl;
-		std::cout << "+++++++++++++++++++++++++" << std::endl; */
+		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{

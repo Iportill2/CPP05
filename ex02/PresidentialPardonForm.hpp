@@ -10,15 +10,9 @@ class PresidentialPardonForm : public AForm
 	//CANONICAL
 								PresidentialPardonForm();
 								PresidentialPardonForm(std::string target);
-
 								PresidentialPardonForm(PresidentialPardonForm const & copy);
 	PresidentialPardonForm & 	operator=(PresidentialPardonForm const &  inst);
-
-	/* 							PresidentialPardonForm(PresidentialPardonForm const & src);
-	PresidentialPardonForm & 	operator=(PresidentialPardonForm const & rhs); */
-
 								~PresidentialPardonForm();
-
 	//GETTER
 	std::string					getTarget() const ;
 
