@@ -17,6 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & in
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & inst)
 {
+    std::cout << "[operator=] Presi" << std::endl;
     if (this != &inst)
     {
         this->_target = inst._target;

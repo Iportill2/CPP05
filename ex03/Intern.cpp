@@ -13,7 +13,7 @@ Intern::Intern(const Intern & copy)
 
 Intern &Intern::operator =(Intern const &inst)
 {
-	std::cout << "[Intern operator=]" << std::endl;
+	std::cout << "[operator=] Intern" << std::endl;
 	(void)inst;
 	return(*this);
 }

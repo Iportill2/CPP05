@@ -17,6 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & inst)
 }
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & inst)
 {
+	std::cout << "[operator=] Shrubbery" << std::endl;
     if (this != &inst)
     {
         this->_target = inst._target;

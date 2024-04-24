@@ -22,23 +22,23 @@ class AForm
 	bool		_signed;
 	public:
 	//CANONICAL
-	AForm();
-	AForm(std::string name,int grade_to_sign,int grade_to_execute);	
-	AForm(const AForm & copy);
-	AForm & operator=(AForm const & inst);
-	virtual ~AForm();
+				AForm();
+				AForm(std::string name,int grade_to_sign,int grade_to_execute);	
+				AForm(const AForm & copy);
+				AForm & operator=(AForm const & inst);
+	virtual 	~AForm();
 	//SETTERS
-	void setName(std::string name);
-	void setGradetosign(int grade_to_sign);
-	void setGradetoexecute(int grade_to_execute);
-	void setSigned(bool signe);
+	void 		setName(std::string name);
+	void 		setGradetosign(int grade_to_sign);
+	void 		setGradetoexecute(int grade_to_execute);
+	void 		setSigned(bool signe);
 	//GETTERS
 	const	std::string getName() const ;
-	int		getGradetosign()const ;
-	int		getGradetoexecute()const ;
-	bool	getSigned() const ;
+	int			getGradetosign()const ;
+	int			getGradetoexecute()const ;
+	bool		getSigned() const ;
 
-	void	beSigned(Bureaucrat &inst);
+	void		beSigned(Bureaucrat &inst);
 
 	virtual void 	execute(Bureaucrat const & executor) const = 0;
 

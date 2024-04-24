@@ -35,17 +35,18 @@ std::cout  << "\033[35m"<< "Constructor Form named " << this->getName() <<  " cr
 AForm::AForm(const AForm & copy)
 {
 	*this=copy;
-	std::cout <<  "[Form copy]"  << "Form original: " << this->_name << " Form copy: " << copy._name << std::endl;
+	std::cout <<  "[AForm copy]"  << "Form original: " << this->_name << " Form copy: " << copy._name << std::endl;
 	
 }
 AForm & AForm::operator=(AForm const & inst)
 {
+
 	this->_name = inst._name;
 	this->_grade_to_sign = inst._grade_to_sign;
 	this->_grade_to_execute = inst._grade_to_execute;
 	this->_signed = inst._signed;
+	std::cout <<  "[AForm operator=]" << std::endl;
 	return (*this);
-	std::cout <<  "Form operator=" << std::endl;
 }
 AForm::~AForm()
 {

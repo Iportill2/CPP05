@@ -17,6 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & inst) : AFo
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & inst)
 {
+	std::cout << "[operator=] Robot" << std::endl;
     if (this != &inst)
     {
         this->_target = inst._target;
